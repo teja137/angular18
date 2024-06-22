@@ -67,7 +67,8 @@
               "buildTarget": "learn:build:production"
             },
             "development": {
-              "buildTarget": "learn:build:development"
+              "buildTarget": "learn:build:development",
+              "port": 1377
             }
           },
           "defaultConfiguration": "development"
@@ -98,5 +99,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
