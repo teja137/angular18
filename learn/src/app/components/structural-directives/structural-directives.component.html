@@ -1,0 +1,81 @@
+<div>
+  <h1>Structural Directives</h1>
+</div>
+<div>*ngIf based on boolean</div>
+<div class="div col-3 bg-success" *ngIf="showLight">Light</div>
+<button class="btn btn-danger" (click)="hideShowLight()">Click to hide</button>
+<button class="btn bg-success" (click)="showShowLight()">Click to show</button>
+<button class="btn bg-success" (click)="changeOnClickShowLight()">Click to hide/show</button>
+<div class="div col-3">*ngIf comparsion operation</div>
+<div *ngIf="conditionalOperationText1 == conditionalOperationText2">Iam equal</div>
+<div *ngIf="conditionalOperationText1 != conditionalOperationText2">Iam not equal</div>
+<div>
+  <input type="text" [(ngModel)]="conditionalOperationText1">
+</div>
+<div>
+  <input type="text" [(ngModel)]="conditionalOperationText2">
+</div>
+<div *ngIf="isChecked">
+  checkbox is checked
+</div>
+<div *ngIf="isChecked == false">
+  checkbox aint checked
+</div>
+<input type="checkbox" [(ngModel)]="isChecked">
+<div *ngIf="life == 'Abundance'">I will be shown when I am {{life}}</div>
+<div *ngIf="life == 'God'">I will be shown when I am {{life}}</div>
+<div *ngIf="life == 'Love'">I will be shown when I am {{life}}</div>
+<div *ngIf="life == 'Peace'">I will be shown when I am {{life}}</div>
+<div *ngIf="life == ''">I will be shown when I am nothing</div>
+
+<select [(ngModel)]="life">
+  <option value="">Select</option>
+  <option value="God">God</option>
+  <option value="Love">Love</option>
+  <option value="Peace">Peace</option>
+  <option value="Abundance">Abundance</option>
+</select>
+<div>*ngFor</div>
+<div>
+  <ul>
+    <li *ngFor="let me of myself">{{me}}</li>
+  </ul>
+</div>
+<div *ngFor="let me of myself">{{me}}</div>
+<select>
+  <option *ngFor="let me of myself">{{me}}</option>
+</select>
+
+<div *ngFor="let i of mySpirit">
+  <p>{{i.number}} - {{i.name}} - {{i.story}} - {{i.feeling}}</p>
+</div>
+
+<div>
+  <select>
+    <option *ngFor="let i of mySpirit" [value]="i.number">{{i.name}}</option>
+  </select>
+</div>
+
+<div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>S.No</td>
+        <td>Number</td>
+        <td>Name</td>
+        <td>Story</td>
+        <td>Feeling</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of mySpirit, let index = index">
+        <td>{{index + 1}}</td>
+        <td>{{i.number}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.story}}</td>
+        <td>{{i.feeling}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
