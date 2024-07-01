@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-structural-directives',
@@ -29,6 +30,10 @@ export class StructuralDirectivesComponent {
     }
 ]
 
+constructor(private router:Router){
+
+}
+
   showShowLight(){
     this.showLight = true;
   }
@@ -47,5 +52,10 @@ export class StructuralDirectivesComponent {
     //   this.showLight = false
     // }
   }
+
+  navigateToAttribute(){
+    this.router.navigateByUrl("attribute-directives");
+  }
+
 
 }
