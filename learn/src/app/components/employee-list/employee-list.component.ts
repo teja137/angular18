@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { sayHi, warn } from 'project';
 
 @Component({
   selector: 'app-employee-list',
@@ -8,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './employee-list.component.scss'
 })
 export class EmployeeListComponent {
+  
+  callBackend(){
+    sayHi();
+    console.log(warn);
+  }
 
 }
